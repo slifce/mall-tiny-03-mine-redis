@@ -29,14 +29,14 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <!--指定生成model的路径-->
-        <javaModelGenerator targetPackage="com.macro.mall.tiny.mbg.model" targetProject="C:\Users\Liaoyangpeng\IdeaProjects\mall-tiny-02-mine\src\main\java"/>
+        <javaModelGenerator targetPackage="com.macro.mall.tiny.mbg.model" targetProject="C:\MyWorks\IDEA2020WorkSpaceMall\mall-tiny-03-mine-redis\src\main\java"/>
         <!--指定生成mapper.xml的路径-->
-        <sqlMapGenerator targetPackage="com.macro.mall.tiny.mbg.mapper" targetProject="C:\Users\Liaoyangpeng\IdeaProjects\mall-tiny-02-mine\src\main\resources"/>
+        <sqlMapGenerator targetPackage="com.macro.mall.tiny.mbg.mapper" targetProject="C:\MyWorks\IDEA2020WorkSpaceMall\mall-tiny-03-mine-redis\src\main\resources"/>
         <!--指定生成mapper接口的的路径-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.macro.mall.tiny.mbg.mapper"
-                             targetProject="C:\Users\Liaoyangpeng\IdeaProjects\mall-tiny-02-mine\src\main\java"/>
+                             targetProject="C:\MyWorks\IDEA2020WorkSpaceMall\mall-tiny-03-mine-redis\src\main\java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="pms_brand">
+        <table tableName="ums_admin">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
