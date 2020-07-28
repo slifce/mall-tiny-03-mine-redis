@@ -54,4 +54,31 @@ public class DateUtil {
         return seconds;
     }
 
+    public static void millis2Date(){
+        Long beginTime = System.currentTimeMillis();
+        Date date = new Date(beginTime+60*60*24*1000);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String format = sdf.format(date);
+        System.out.println("format:"+format);
+    }
+
+    /**
+     * 给定日期加上指定天数后
+     * @param date
+     * @param day
+     * @return
+     */
+    public static String addDate(Date date,long day) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        long time = date.getTime();
+        day = day*24*60*60*1000;
+        time+=day;
+        return format.format(new Date(time));
+    }
+
+    public static void main(String[] args) {
+//        millis2Date();
+        System.out.println("args = [" + addDate(new Date(),1) + "]");
+    }
+
 }
