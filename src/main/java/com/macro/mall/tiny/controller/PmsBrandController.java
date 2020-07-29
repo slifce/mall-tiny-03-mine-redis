@@ -89,6 +89,7 @@ public class PmsBrandController {
     public CommonResult<CommonPage<PmsBrand>> listBrand(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                         @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize) {
         List<PmsBrand> brandList = demoService.listBrand(pageNum, pageSize);
+        LOGGER.debug("brandList success :size={}", brandList.size());
         return CommonResult.success(CommonPage.restPage(brandList));
     }
 
