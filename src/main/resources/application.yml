@@ -39,4 +39,16 @@ jwt:
   expiration: 604800 #JWT的超期限时间(60*60*24)
   tokenHead: Bearer  #JWT负载中拿到开头
 
+spring:
+  mail:
+    username: 734507707@qq.com
+    password: meslyffimougbcdf
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+
+
 
