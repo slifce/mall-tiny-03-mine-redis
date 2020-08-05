@@ -1,5 +1,6 @@
 package com.macro.mall.tiny.controller;
 
+import com.macro.mall.tiny.annotation.CheckSubmitRepeat;
 import com.macro.mall.tiny.common.api.CommonPage;
 import com.macro.mall.tiny.common.api.CommonResult;
 import com.macro.mall.tiny.mbg.model.PmsBrand;
@@ -83,6 +84,7 @@ public class PmsBrandController {
         }
     }
 
+    @CheckSubmitRepeat
     @ApiOperation("分页查询品牌列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
