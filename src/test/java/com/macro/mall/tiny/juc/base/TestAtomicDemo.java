@@ -1,4 +1,4 @@
-package com.atguigu.juc.base;
+package com.macro.mall.tiny.juc.base;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

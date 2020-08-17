@@ -1,4 +1,4 @@
-package com.atguigu.juc.base;
+package com.macro.mall.tiny.juc.base;
 
 /*
  * 模拟 CAS 算法

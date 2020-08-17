@@ -1,4 +1,4 @@
-package com.atguigu.juc.improve;
+package com.macro.mall.tiny.juc.improve;
 
 /*
  * 题目：判断打印的 "one" or "two" ？

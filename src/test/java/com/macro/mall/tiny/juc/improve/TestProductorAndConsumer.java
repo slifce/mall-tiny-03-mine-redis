@@ -1,4 +1,4 @@
-package com.atguigu.juc.improve;
+package com.macro.mall.tiny.juc.improve;
 
 /*
  * 生产者和消费者案例

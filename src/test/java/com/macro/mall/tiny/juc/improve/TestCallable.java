@@ -1,4 +1,4 @@
-package com.atguigu.juc.improve;
+package com.macro.mall.tiny.juc.improve;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

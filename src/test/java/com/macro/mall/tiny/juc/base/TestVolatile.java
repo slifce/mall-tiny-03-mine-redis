@@ -1,4 +1,4 @@
-package com.atguigu.juc.base;
+package com.macro.mall.tiny.juc.base;
 
 /*
  * 一、volatile 关键字：当多个线程进行操作共享数据时，可以保证内存中的数据可见。

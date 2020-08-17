@@ -1,4 +1,4 @@
-package com.atguigu.juc.improve;
+package com.macro.mall.tiny.juc.improve;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
