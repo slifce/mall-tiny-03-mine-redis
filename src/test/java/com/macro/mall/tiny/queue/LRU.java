@@ -146,12 +146,14 @@ public class LRU<K, V> {
 
 
     public static void main(String[] args) {
+        System.out.println(17 & 13);
         LRU<Integer, String> lru = new LRU<Integer, String>(5);
         lru.put(1, "a");
         lru.put(2, "b");
         lru.put(3, "c");
         lru.put(4,"d");
         lru.put(5,"e");
+        //put方法中会将新增数据从链表的尾部移动到头部作为热点数据，重写toString显示Node节点数据
         System.out.println("原始链表为:"+lru.toString());
 
         lru.get(4);
