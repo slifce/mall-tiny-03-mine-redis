@@ -3,10 +3,8 @@ package com.macro.mall.tiny.mutilthread;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 单线程循环耗时： = [8876]
@@ -59,7 +57,37 @@ public class CompareTime {
         System.out.println(list.size());
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void renameThread() throws ExecutionException, InterruptedException {
+        ExecutorService threadPool = Executors.newCachedThreadPool(new ThreadFactory(){
+
+            final AtomicInteger threadNumber = new AtomicInteger(1);
+
+            public Thread newThread(Runnable runnable) {
+                // Use our own naming scheme for the threads.
+                Thread thread = new Thread(Thread.currentThread().getThreadGroup(), runnable,
+                        "pool-spark" + threadNumber.getAndIncrement(), 0); //这里实现命名
+                // Make workers daemon threads.
+                thread.setDaemon(true);
+                if (thread.getPriority() != Thread.NORM_PRIORITY) {
+                    thread.setPriority(Thread.NORM_PRIORITY);
+                }
+                return thread;
+            }
+        });
+        int sum = 0;
+        Future<Integer> future = threadPool.submit(new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                System.out.println(Thread.currentThread().getName());
+                return 1 + 1;
+            }
+        });
+        Integer result = future.get();
+        System.out.println(result);
+    }
+
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        renameThread();
         normalRun();
         poolRun();
     }

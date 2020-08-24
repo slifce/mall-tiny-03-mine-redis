@@ -19,7 +19,10 @@ public class GlobalExceptionHandler {
 
     /**
      * 缺省的错误处理器，所有特定错误无法处理的异常，均由此Handler处理.
-     *
+     * 通过@ControllerAdvice+@ExceptionHandler进行全局的 Controller 层异常处理。
+     * 只要设计得当，就再也不用在 Controller 层进行 try-catch 了
+     * 具体异常信息返回可以通过枚举列举，通过异常e instanceOf 进行类型判断返回异常类别
+     * 也设计一种默认的位置异常枚举，默认返回
      * @param ex
      * @return
      * @throws Exception
